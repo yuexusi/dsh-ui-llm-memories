@@ -1,0 +1,56 @@
+{
+  "name": "dsh-ui-llm-memories",
+  "version": "0.1.0",
+  "description": "Persistent cross-session memory for the DSH web client: a Memories tab with full CRUD, automatic system-prompt injection, and memory tools for the model.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "engines": {
+    "dsh": ">=0.2.0-rc.2"
+  },
+  "homepage": "https://github.com/yuexusi/dsh-ui-llm-memories#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuexusi/dsh-ui-llm-memories.git"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "memory",
+    "memories"
+  ],
+  "license": "MIT"
+}

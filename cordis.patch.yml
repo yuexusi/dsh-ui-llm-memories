@@ -1,0 +1,11 @@
+# dsh-ui-llm-memories: 跨会话持久记忆（持久化组合条目）。
+# 安装后一行同时挂载：宿主存储/工具/提示词注入 + 客户端「记忆」视图卡片。
+# 注意：此加载器的服务注入来自条目选项 inject，而非模块导出。
+- insert:
+    - id: llm-memories
+      name: dsh-ui-llm-memories
+      inject:
+        - webServer
+        - connection
+        - systemPrompt
+        - tools
